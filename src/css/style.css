@@ -128,8 +128,7 @@
   text-align:left;
 }
 
-
-/* corrigido seletor duplicado ".pesquisa .pesquisa" */
+/* BARRA DE PESQUISA */
 .pesquisa{
   display:flex;
   justify-content:center;
@@ -161,29 +160,29 @@
 
 
 
-/* cards */
-.container-catalogo {
+/* CARDS, CARDS DE DESTAQUE */
+.container-catalogo, .card-destaque, .card-destaques {
   width: 100%;
   padding: 2rem 1rem;
   max-width: 1400px;
   margin: 0 auto;
 }
-.card-pai {
+.card-pai, .card-destaque, .card-destaques {
   width: 100%;
   padding: 0 1.5rem;
   box-sizing: border-box;
 }
-.card-corpo {
+.card-corpo, .card-destaque, .card-destaques {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   gap: 1.5rem;
 }
-.card-pai .card {
+.card-pai .card, .card-destaque .card, .card-destaques .card {
   width: 100%;
   display: block;
 }
-.card-pai .card > .card {
+.card-pai .card, .card-destaque .card, .card-destaques .card {
   width: 100% !important;
   max-width: 100% !important;
   min-height: 380px;
@@ -196,7 +195,7 @@
   box-shadow: 0 10px 24px rgba(0,0,0,.08);
   cursor: pointer;
 }
-.card-pai .card > .card img.card-img-top {
+.card-pai .card img.card-img-top, .card-destaque .card img.card-img-top, .card-destaques .card img.card-img-top {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: contain;
@@ -204,7 +203,7 @@
   background: #f8f8f8;
   display: block;
 }
-.card-pai .card > .card .card-body {
+.card-pai .card .card-body, .card-destaque .card .card-body, .card-destaques .card .card-body {
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -212,20 +211,73 @@
   gap: 0.75rem;
   flex: 1;
 }
-.card-pai .card > .card .card-body p {
+.card-pai .card .card-body p , .card-destaque .card .card-body p, .card-destaques .card .card-body p {
   margin: 0;
 }
-.card-pai .card > .card .card-title {
+.card-pai .card .card-title , .card-destaque .card .card-title, .card-destaques .card .card-title {
   margin: 0;
   font-size: 1rem;
   color: #111;
 }
-.card-pai .card > .card .card-text {
+
+.card-destaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.destaque-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  width: 100%;
+}
+
+.destaque-track::-webkit-scrollbar {
+  display: none;
+}
+
+.destaque-track {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.card-destaque .card {
+  flex: 0 0 320px;
+  width: 320px !important;
+}
+
+.arrow-btn {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: #100846;
+  color: #fff;
+  font-size: 1.5rem;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, background 0.3s ease;
+}
+
+.arrow-btn:hover {
+  background: #1f1a72;
+}
+
+.arrow-btn:focus {
+  outline: 3px solid #c8c8ff;
+}
+.card-pai .card .card-text , .card-destaque .card .card-text, .card-destaques .card .card-text {
   margin: 0;
   color: #444;
   line-height: 1.4;
 }
-.card-button2{
+.card-button2,  .card-button{
   margin-top:auto;
   display:flex;
   justify-content:center;
@@ -266,4 +318,40 @@
   width: 100%;
   max-height: 520px;
   object-fit: cover;
+}
+
+
+/* TEXTO DE DESTAQUE */
+
+
+.text-maisvendidos{
+  margin-left: 50px;
+  text-align: left;
+}
+
+.text-maisvendidos h4 {
+  font-size: 40px;
+ 
+  color: #100846;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.text-maisvendidos h4::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 130%;
+  height: 5px;
+  background: #100846;
+  border-radius: 3px;
+}
+
+.text-maisvendidos h2 {
+  margin-top: 0.5rem;
+  font-size: 2.5rem;
+  color: #100846;
 }

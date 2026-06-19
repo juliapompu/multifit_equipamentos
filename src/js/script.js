@@ -17,4 +17,22 @@ document.addEventListener('DOMContentLoaded', function () {
       productModal.show();
     });
   });
+
+  const destaqueTrack = document.querySelector('.destaque-track');
+  const leftArrow = document.querySelector('.arrow-left');
+  const rightArrow = document.querySelector('.arrow-right');
+
+  if (destaqueTrack && leftArrow && rightArrow) {
+    const cardWidth = destaqueTrack.querySelector('.card') ? destaqueTrack.querySelector('.card').offsetWidth : 320;
+    const gap = 16;
+    const scrollAmount = cardWidth + gap;
+
+    leftArrow.addEventListener('click', () => {
+      destaqueTrack.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    });
+
+    rightArrow.addEventListener('click', () => {
+      destaqueTrack.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    });
+  }
 });
