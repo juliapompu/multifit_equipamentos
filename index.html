@@ -9,32 +9,28 @@
 </head>
 <body>
  
-<!-- ═══════════════════════════════ NAVBAR ═══════════════════════════════ -->
 <nav>
-  <a class="nav-brand" href="./index.html" onclick="showPage('home')">
+  <a class="nav-brand" onclick="showPage('home')">
     <div class="nav-logo">
-        <img src="src/assets/logo_multifit.png" alt="Logo Multifit Equipamentos" />
+      <img src="src/assets/logo_multifit.png" alt="Logo Multifit Equipamentos" />
     </div>
     <div class="nav-brand-text">
       <strong>MULTIFIT EQUIPAMENTOS</strong>
       <span>Saúde, Boa Forma Física e Autoestima<br>Equipamentos e Acessórios Esportivos</span>
     </div>
   </a>
-  <ul class="nav-links">
-    <li><a href="./index.html" id="nav-home" class="active" onclick="showPage('home')">HOME</a></li>
-    <li><a href="./src/pages/Catalogo.html" id="nav-catalog" onclick="showPage('catalog')">CATÁLOGO</a></li>
-    <li><a href="./src/pages/Sobre.html" id="nav-sobre" onclick="showPage('home')">SOBRE NÓS</a></li>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">HOME</a></li>
+    <li><a href="#" id="nav-catalog" onclick="showPage('catalog'); return false;">CATÁLOGO</a></li>
+    <li><a href="#" id="nav-sobre" onclick="showPage('sobre'); return false;">SOBRE NÓS</a></li>
   </ul>
-
-    <button class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
-    </button>
+  <button class="nav-hamburger" onclick="document.getElementById('nav-links').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
  
-<!-- ═══════════════════════════════ HOME PAGE ═══════════════════════════════ -->
+<!-- ═══ HOME ═══ -->
 <div id="page-home" class="page active">
- 
-  <!-- Search -->
   <div class="hero-search">
     <div class="search-row">
       <input type="text" placeholder="Ex: Anilha..." id="search-input" oninput="filterSearch()" />
@@ -45,84 +41,146 @@
     </div>
   </div>
  
-  <!-- Destaques label -->
   <div class="destaques-wrap">
     <div class="destaques-header">
       <p>Destaques</p>
       <h2>Mais Vendidos:</h2>
     </div>
- 
-    <!-- Banner Slider -->
-    <div class="banner-slider-outer">
-      <div class="banner-card" id="banner-card">
-            <div class="banner-img">
-              <img id="banner-image" src="src/assets/anilheiro_MF1112.png" alt="Anilheiro MF1112" />
-            </div>
-        <div class="banner-info">
-          <h3 id="banner-title">SUPORTE HORIZONTAL DE BARRAS MF1115</h3>
-          <ul id="banner-list">
-            <li>Suporte horizontal para barras</li>
-            <li>Estrutura em aço reforçado</li>
-            <li>Pintura eletrostática à pó</li>
-            <li>Design moderno e robusto</li>
-          </ul>
-        </div>
-        <button class="banner-arrow left" onclick="bannerPrev()">&#8249;</button>
-        <button class="banner-arrow right" onclick="bannerNext()">&#8250;</button>
-        <div class="banner-dots" id="banner-dots"></div>
+    <div class="banner-card" id="banner-card">
+      <div class="banner-img"><div class="placeholder-img">🏋️</div></div>
+      <div class="banner-info">
+        <h3 id="banner-title">SUPORTE HORIZONTAL DE BARRAS MF1115</h3>
+        <ul id="banner-list">
+          <li>Suporte horizontal para barras</li>
+          <li>Estrutura em aço reforçado</li>
+          <li>Pintura eletrostática à pó</li>
+          <li>Design moderno e robusto</li>
+        </ul>
       </div>
+      <button class="banner-arrow left" onclick="bannerPrev()">&#8249;</button>
+      <button class="banner-arrow right" onclick="bannerNext()">&#8250;</button>
+      <div class="banner-dots" id="banner-dots"></div>
     </div>
   </div>
  
-  <!-- Carousel -->
   <main>
     <p class="section-title">Nossos Equipamentos</p>
-    <div class="carousel-outer">
-      <button class="carousel-arrow left" onclick="carouselPrev()">&#8249;</button>
-      <div class="carousel-track-wrap">
-        <div class="carousel-track" id="carousel-track"></div>
+    <div class="home-grid" id="home-grid"></div>
+  </main>
+ 
+  <!-- SOBRE NÓS inline na home (ancoragem via nav) -->
+  <div id="sobre-inline"></div>
+</div>
+
+<!-- ═══ CATÁLOGO ═══ -->
+<div id="page-catalog" class="page">
+  <main>
+    <div class="catalog-header">
+      <h1>Nossos Equipamentos</h1>
+    </div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </main>
+</div>
+
+<!-- ═══ SOBRE NÓS ═══ -->
+<div id="page-sobre" class="page">
+  <main>
+    <div class="sobre-hero">
+      <p>Sobre Nós</p>
+      <h1>Equipamentos para a sua melhor forma</h1>
+    </div>
+    <p class="sobre-desc">
+      A Multifit Equipamentos é especialista em equipamentos e acessórios esportivos, oferecendo
+      produtos de alta qualidade para academias, studios, condomínios e centros de melhoria em todo o Brasil.
+    </p>
+    <div class="sobre-cards">
+      <div class="sobre-card">
+        <div class="sobre-card-icon">🔩</div>
+        <h4>Estrutura em Aço Reforçado</h4>
+        <p>Aço tubular de alta resistência com solda MIG para máxima durabilidade.</p>
       </div>
-      <button class="carousel-arrow right" onclick="carouselNext()">&#8250;</button>
+      <div class="sobre-card">
+        <div class="sobre-card-icon">🎨</div>
+        <h4>Pintura Eletrostática</h4>
+        <p>Pintura à pó de alta qualidade que protege contra corrosão e desgaste.</p>
+      </div>
+      <div class="sobre-card">
+        <div class="sobre-card-icon">🛋️</div>
+        <h4>Estofado de Alta Densidade</h4>
+        <p>Estofamento profissional que oferece conforto e resistência ao uso intensivo.</p>
+      </div>
+      <div class="sobre-card">
+        <div class="sobre-card-icon">🚚</div>
+        <h4>Entrega em Todo o Brasil</h4>
+        <p>Logística completa para academias, condomínios ou centros de treino.</p>
+      </div>
+    </div>
+    <div class="sobre-cta">
+      <button class="btn-primary" onclick="showPage('catalog')">SOLICITAR ORÇAMENTO</button>
     </div>
   </main>
 </div>
  
- 
-<!-- ═══════════════════════════════ DETAIL PAGE ═══════════════════════════════ -->
+<!-- ═══ DETALHE ═══ -->
 <div id="page-detail" class="page">
   <main>
     <div class="breadcrumb">
-      <a href="src/pages/Catalogo.html" onclick="showPage('catalog')">← Catálogo</a>
+      <a href="#" onclick="showPage('catalog'); return false;">← Catálogo</a>
       <span id="detail-breadcrumb">Produto</span>
     </div>
     <div class="detail-layout">
       <div class="detail-img-box">
-        <div class="emoji" id="detail-emoji">
-            <img src="src/assets/anilheiro_MF1112.png" alt="Anilheiro MF1112" />
-        </div>
+        <img class="detail-image" id="detail-emoji" src="" alt="">
       </div>
       <div class="detail-info">
         <div>
-          <div class="detail-eyebrow" id="detail-category">MUSCULAÇÃO &nbsp; ELITE SERIES</div>
+          <div class="detail-eyebrow" id="detail-category">MUSCULAÇÃO · ELITE SERIES</div>
           <h1 id="detail-title">Produto</h1>
         </div>
-        <p class="desc" id="detail-desc">Descrição do produto.</p>
-    
-        <div class="specs-section">
-          <h3>Especificações Técnicas</h3>
-          <div class="specs-grid" id="detail-specs"></div>
-        </div>
- 
+        <p class="desc" id="detail-desc"></p>
+      
         <div class="char-section">
           <h3>Características</h3>
           <ul id="detail-chars"></ul>
         </div>
- 
-        <!-- materiais removidos do detalhe para cards -->
+        <div class="mat-section">
+          <h3>Materiais</h3>
+          <div id="detail-mats"></div>
+        </div>
       </div>
     </div>
   </main>
 </div>
+ 
+<!-- ═══ FOOTER (fixo, renderizado fora das pages) ═══ -->
+<footer id="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <strong>MULTIFIT EQUIPAMENTOS</strong>
+      <p>Saúde, boa forma física e autoestima.<br>Equipamentos e acessórios esportivos de qualidade.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navegação</h5>
+      <ul>
+        <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
+        <li><a href="#" onclick="showPage('catalog'); return false;">Catálogo</a></li>
+        <li><a href="#" onclick="showPage('sobre'); return false;">Sobre Nós</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contato</h5>
+      <div class="contact-row"><span>📞</span><span>(11) 4000-0000</span></div>
+      <div class="contact-row"><span>✉️</span><span>contato@multifit.com.br</span></div>
+      <div class="contact-row"><span>📍</span><span>São Paulo, SP — Brasil</span></div>
+      <div class="footer-social">
+        <a href="mailto:juliapompeusouza200@gmail.com, gostaria de saber mais.">in</a>
+        <a href="#">f</a>
+        <a href="#">ig</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2024 Multifit Equipamentos. Todos os direitos reservados.</div>
+</footer>
  
 <script src="src/js/script.js"></script>
 </body>

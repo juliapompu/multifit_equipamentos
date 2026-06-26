@@ -10,9 +10,7 @@
 <body>
     <nav>
   <a class="nav-brand" href="../../index.html" onclick="showPage('home')">
-    <div class="nav-logo">
-        <img src="../assets/logo_multifit.png" alt="Logo Multifit Equipamentos" />
-    </div>
+    <div class="nav-logo"></div>
     <div class="nav-brand-text">
       <strong>MULTIFIT EQUIPAMENTOS</strong>
       <span>Saúde, Boa Forma Física e Autoestima<br>Equipamentos e Acessórios Esportivos</span>
@@ -20,13 +18,13 @@
   </a>
   <ul class="nav-links">
     <li><a href="../../index.html" id="nav-home" class="active" onclick="showPage('home')">HOME</a></li>
-    <li><a href="./Catalogo.html" id="nav-catalog" onclick="showPage('catalog')">CATÁLOGO</a></li>
+    <li><a href="./Catalogo.html" id="nav-catalog" class="active" onclick="showPage('catalog')">CATÁLOGO</a></li>
     <li><a href="./Sobre.html" id="nav-sobre" onclick="showPage('home')">SOBRE NÓS</a></li>
   </ul>
 </nav>
  
 <!-- ═══════════════════════════════ HOME PAGE ═══════════════════════════════ -->
-<div id="page-home" class="page active">
+<div id="page-home" class="page">
  
   <!-- Search -->
   <div class="hero-search">
@@ -43,18 +41,15 @@
 
 
 
-    <!-- ═══════════════════════════════ CATALOG PAGE ═══════════════════════════════ -->
-    <div id="page-catalog" class="page">
-    <main>
-        <div class="catalog-header">
-        <h1>Nossos Equipamentos</h1>
-        </div>
-        <div class="catalog-grid" id="catalog-grid">
+   <!-- ═══ CATÁLOGO ═══ -->
+<div id="page-catalog" class="page active">
+  <main>
+    <div class="catalog-header"><h1>Nossos Equipamentos</h1></div>
+    <div class="catalog-grid" id="catalog-grid"></div>
+  </main>
+  <div id="catalog-footer-slot"></div>
+</div>
 
-        </div>
-    </main>
-    </div>
-
-<script src="src/js/script.js"></script>
+<script src="../js/script.js"></script>
 </body>
 </html>

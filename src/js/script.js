@@ -1,6 +1,6 @@
-// ── DATA ──
+  // ── PRODUTOS ──
   const products = [
-    {
+     {
       id: 1,
       name: 'Anilheiro de 04 pinos com 02 suporte para barra MF1112',
       category: 'MUSCULAÇÃO · LINHA PRO',
@@ -139,155 +139,147 @@
     },
   ];
  
-  // Banner slides
+  function getAssetPath(path) {
+    const normalizedPath = path.replace(/^\//, '');
+    if (window.location.pathname.includes('/src/pages/')) {
+      return new URL(normalizedPath.replace(/^src\//, '../'), window.location.href).href;
+    }
+    return new URL(normalizedPath, window.location.href).href;
+  }
+
+  // ── BANNER ──
   const bannerSlides = [
-    { title: 'LEG PRESS 45°', items: ['Plataforma extra-larga de 800mm', 'Trilhos retificados em aço carbono', 'Trava de segurança dupla', 'Ideal para academias profissionais'], image: 'src/assets/anilheiro_MF1112.png' },
-    { title: 'CROSSOVER DUPLO ELITE SERIES', items: ['Duas colunas independentes de 90 kg', 'Polias ajustáveis em 20 posições', 'Cabos com 900 kg de tração', 'Barra de pull-up integrada'], image: 'src/assets/suporte_ho_barras_MF1115.png' },
-    { title: 'SUPORTE HORIZONTAL DE BARRAS MF1115', items: ['Suporte horizontal para barras', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Design moderno e robusto'], image: 'src/assets/equipamento_biceps_MF1152.png' },
+    { title: 'LEG PRESS 45°', items: ['Plataforma extra-larga de 800mm','Trilhos retificados em aço carbono','Trava de segurança dupla','Ideal para academias profissionais'] },
+    { title: 'CROSSOVER DUPLO ELITE SERIES', items: ['Duas colunas independentes de 90 kg','Polias ajustáveis em 20 posições','Cabos com 900 kg de tração','Barra de pull-up integrada'] },
+    { title: 'SUPORTE HORIZONTAL DE BARRAS MF1115', items: ['Suporte horizontal para barras','Estrutura em aço reforçado','Pintura eletrostática à pó','Design moderno e robusto'] },
   ];
   let bannerIdx = 2;
  
   function renderBannerDots() {
     const dots = document.getElementById('banner-dots');
-    dots.innerHTML = bannerSlides.map((_, i) =>
-      `<span class="${i === bannerIdx ? 'active' : ''}" onclick="setBanner(${i})"></span>`
-    ).join('');
+    if (!dots) return;
+    dots.innerHTML = bannerSlides.map((_,i) =>
+      `<span class="${i===bannerIdx?'active':''}" onclick="setBanner(${i})"></span>`).join('');
   }
- 
   function setBanner(i) {
     bannerIdx = i;
     const s = bannerSlides[i];
-    document.getElementById('banner-title').textContent = s.title;
-    document.getElementById('banner-list').innerHTML = s.items.map(it => `<li>${it}</li>`).join('');
-    // atualizar imagem do banner
-    const bannerImg = document.getElementById('banner-image');
-    if (bannerImg && s.image) bannerImg.src = s.image;
+    const title = document.getElementById('banner-title');
+    const list = document.getElementById('banner-list');
+    if (title) title.textContent = s.title;
+    if (list) list.innerHTML = s.items.map(it=>`<li>${it}</li>`).join('');
     renderBannerDots();
   }
+  function bannerNext() { setBanner((bannerIdx+1) % bannerSlides.length); }
+  function bannerPrev() { setBanner((bannerIdx-1+bannerSlides.length) % bannerSlides.length); }
+  if (document.getElementById('banner-title') || document.getElementById('banner-list') || document.getElementById('banner-dots')) {
+    setInterval(bannerNext, 4000);
+  }
  
-  function bannerNext() { setBanner((bannerIdx + 1) % bannerSlides.length); }
-  function bannerPrev() { setBanner((bannerIdx - 1 + bannerSlides.length) % bannerSlides.length); }
- 
-  // Auto-advance banner
-  setInterval(bannerNext, 4000);
- 
-
-  // ── PRODUCT CARD HTML ──
-  function cardHTML(p) {
-    return `
-      <div class="prod-card" onclick="showDetail(${p.id})">
-        <div class="prod-card-img">${p.img ? `<img src="${p.img}" alt="${p.name}">` : `<div class="emoji">${p.emoji || ''}</div>`}</div>
-        <div class="prod-card-body">
+  // ── HOME GRID ──
+  function renderHomeGrid(list) {
+    const container = document.getElementById('home-grid');
+    if (!container) return;
+    container.innerHTML = list.map(p => `
+      <div class="home-card" onclick="showDetail(${p.id})">
+        <div class="home-card-img">
+          <img class="card-image" src="${getAssetPath(p.img)}" alt="${p.name}">
+          <span class="home-card-tag">${p.category.split('·')[0].trim()}</span>
+        </div>
+        <div class="home-card-body">
           <h4>${p.name}</h4>
           <p>${p.shortDesc}</p>
         </div>
-        <div class="prod-card-footer">
+        <div class="home-card-footer">
           <span>Por:</span>
-          <button class="btn-ver" onclick="event.stopPropagation(); showDetail(${p.id})">VER MAIS</button>
+          <button class="btn-ver" onclick="event.stopPropagation();showDetail(${p.id})">VER MAIS</button>
         </div>
-      </div>
-    `;
-  }
-
-  // ── CAROUSEL ──
-  function renderCarousel(list) {
-    const track = document.getElementById('carousel-track');
-    if (!track) return;
-    track.innerHTML = list.map(cardHTML).join('');
-  }
-
-  // ── SEARCH ──
-  function filterSearch() {
-    const q = document.getElementById('search-input').value.toLowerCase();
-    const filtered = q ? products.filter(p =>
-      p.name.toLowerCase().includes(q) || p.shortDesc.toLowerCase().includes(q)
-    ) : products;
-    renderCarousel(filtered);
-  }
-
-  function carouselNext() {
-    const wrap = document.querySelector('.carousel-track-wrap');
-    if (!wrap) return;
-    wrap.scrollBy({ left: wrap.offsetWidth / 3 + 7, behavior: 'smooth' });
-  }
-
-  function carouselPrev() {
-    const wrap = document.querySelector('.carousel-track-wrap');
-    if (!wrap) return;
-    wrap.scrollBy({ left: -(wrap.offsetWidth / 3 + 7), behavior: 'smooth' });
-  }
-
- // ── DETAIL ──
-function showDetail(id) {
-  const p = products.find(x => x.id === id);
-  if (!p) return;
-  document.getElementById('detail-breadcrumb').textContent = p.name;
-  
-  // renderizar imagem
-  const emojiEl = document.getElementById('detail-emoji');
-  if (p.img) {
-    emojiEl.innerHTML = `<img src="${p.img}" alt="${p.name}" />`;
-  } else {
-    emojiEl.textContent = p.emoji || '';
-  }
-  
-  document.getElementById('detail-category').textContent = p.category;
-  document.getElementById('detail-title').textContent = p.name;
-  document.getElementById('detail-desc').textContent = p.fullDesc;
-
-  document.getElementById('detail-specs').innerHTML = p.specs.map(s => `
-    <div class="spec-card">
-      <div class="spec-label">${s.label}</div>
-      <div class="spec-val">${s.val}</div>
-    </div>
-  `).join('');
-
-  document.getElementById('detail-chars').innerHTML = p.chars.map(c => `<li>${c}</li>`).join('');
-
-  const matsEl = document.getElementById('detail-mats');
-  if (matsEl) {
-    matsEl.innerHTML = p.mats.map(m => `
-      <div class="mat-row">
-        <span class="mat-key">${m.key}</span>
-        <span class="mat-val">${m.val}</span>
-      </div>
-    `).join('');
-  }
-
-  showPage('detail');
-}
- 
-  // ── PAGE ROUTING ──
-  function showPage(name) {
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + name).classList.add('active');
-    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-    const map = { home: 'nav-home', catalog: 'nav-catalog', detail: 'nav-catalog' };
-    if (map[name]) document.getElementById(map[name])?.classList.add('active');
-    window.scrollTo(0, 0);
-    return false;
+      </div>`).join('');
   }
  
   // ── CATALOG GRID ──
   function renderCatalog(list) {
-    const grid = document.getElementById('catalog-grid');
-    grid.innerHTML = list.map(p => `
+    const container = document.getElementById('catalog-grid');
+    if (!container) return;
+    container.innerHTML = list.map(p => `
       <div class="prod-card" onclick="showDetail(${p.id})">
-        <div class="prod-card-img">${p.img ? `<img src="${p.img}" alt="${p.name}">` : `<div class="emoji">${p.emoji || ''}</div>`}</div>
+        <div class="prod-card-img">
+          <img class="card-image" src="${getAssetPath(p.img)}" alt="${p.name}">
+        </div>
         <div class="prod-card-body">
           <h4>${p.name}</h4>
           <p>${p.shortDesc}</p>
         </div>
         <div class="prod-card-footer">
           <span>Por:</span>
-          <button class="btn-ver" onclick="event.stopPropagation(); showDetail(${p.id})">VER MAIS</button>
+          <button class="btn-ver" onclick="event.stopPropagation();showDetail(${p.id})">VER MAIS</button>
         </div>
-      </div>
-    `).join('');
+      </div>`).join('');
+  }
+ 
+  // ── SEARCH ──
+  function filterSearch() {
+    const input = document.getElementById('search-input');
+    if (!input) return;
+    const q = input.value.toLowerCase();
+    const filtered = q ? products.filter(p =>
+      p.name.toLowerCase().includes(q) || p.shortDesc.toLowerCase().includes(q)) : products;
+    if (document.getElementById('home-grid')) renderHomeGrid(filtered);
+    if (document.getElementById('catalog-grid')) renderCatalog(filtered);
+  }
+ 
+  // ── DETAIL ──
+  function showDetail(id) {
+    const p = products.find(x => x.id === id);
+    if (!p) return;
+
+    const breadcrumb = document.getElementById('detail-breadcrumb');
+    const detailImage = document.getElementById('detail-emoji');
+    const category = document.getElementById('detail-category');
+    const title = document.getElementById('detail-title');
+    const desc = document.getElementById('detail-desc');
+    const specs = document.getElementById('detail-specs');
+    const chars = document.getElementById('detail-chars');
+    const mats = document.getElementById('detail-mats');
+
+    if (breadcrumb) breadcrumb.textContent = p.name;
+    if (detailImage) {
+      detailImage.src = getAssetPath(p.img);
+      detailImage.alt = p.name;
+    }
+    if (category) category.textContent = p.category;
+    if (title) title.textContent = p.name;
+    if (desc) desc.textContent = p.fullDesc;
+    if (specs) specs.innerHTML = p.specs.map(s =>
+      `<div class="spec-card"><div class="spec-label">${s.label}</div><div class="spec-val">${s.val}</div></div>`).join('');
+    if (chars) chars.innerHTML = p.chars.map(c => `<li>${c}</li>`).join('');
+    if (mats) mats.innerHTML = p.mats.map(m =>
+      `<div class="mat-row"><span class="mat-key">${m.key}</span><span class="mat-val">${m.val}</span></div>`).join('');
+
+    if (document.getElementById('page-detail')) showPage('detail');
+  }
+ 
+  // ── ROUTING ──
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    const targetPage = document.getElementById('page-' + name);
+    if (targetPage) targetPage.classList.add('active');
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    const navLinks = document.getElementById('nav-links');
+    if (navLinks) navLinks.classList.remove('open');
+    const map = { home:'nav-home', catalog:'nav-catalog', sobre:'nav-sobre', detail:'nav-catalog' };
+    if (map[name]) document.getElementById(map[name])?.classList.add('active');
+    window.scrollTo(0, 0);
   }
  
   // ── INIT ──
-  renderBannerDots();
-  setBanner(bannerIdx);
-  renderCarousel(products);
-  renderCatalog(products);
+  if (document.getElementById('banner-dots') || document.getElementById('banner-title') || document.getElementById('banner-list')) {
+    renderBannerDots();
+    setBanner(bannerIdx);
+  }
+
+  // roda renderHomeGrid só se o elemento existir (página home)
+  if (document.getElementById('home-grid')) renderHomeGrid(products);
+
+  // roda renderCatalog só se o elemento existir (página catálogo)
+  if (document.getElementById('catalog-grid')) renderCatalog(products);
