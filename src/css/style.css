@@ -89,7 +89,13 @@
       width: 55%; background: #e8eaf6;
       display: flex; align-items: center; justify-content: center; min-height: 260px;
     }
-    .banner-img .placeholder-img { font-size: 64px; opacity: .3; }
+    .banner-img .placeholder-img {
+      width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+    }
+    .banner-img .placeholder-img img {
+      width: 100%; height: 100%; object-fit: contain; display: block;
+    }
     .banner-info { flex: 1; background: var(--navy); padding: 36px 32px; color: #fff; }
     .banner-info h3 { font-size: 20px; font-weight: 800; margin-bottom: 18px; text-transform: uppercase; letter-spacing: .5px; }
     .banner-info ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
@@ -117,6 +123,47 @@
     /* ── MAIN ── */
     main { padding: 40px; }
     .section-title { font-size: 22px; font-weight: 700; margin-bottom: 24px; color: var(--navy); }
+
+    .see-more-section {
+      background: #fff; margin: 0 40px 24px; border-radius: 16px; padding: 24px 24px 18px;
+      box-shadow: 0 2px 12px rgba(0,0,0,.06);
+    }
+    .see-more-header {
+      display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;
+    }
+    .see-more-header p { font-size: 12px; text-transform: uppercase; letter-spacing: 1.6px; color: var(--muted); margin-bottom: 4px; }
+    .see-more-header h2 { font-size: 20px; font-weight: 800; color: var(--navy); }
+    .see-more-controls { display: flex; gap: 8px; }
+    .mini-carousel-arrow {
+      width: 36px; height: 36px; border-radius: 50%; border: none; background: var(--navy); color: #fff;
+      font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    }
+    .mini-carousel {
+      overflow: hidden;
+    }
+    .mini-carousel-track {
+      display: flex; transition: transform .35s ease;
+    }
+    .mini-carousel-slide {
+      min-width: 100%; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px;
+    }
+    .mini-card {
+      background: #f8f9ff; border: 1px solid #e4e7f3; border-radius: 14px; padding: 16px; cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .mini-card:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,.08); }
+    .mini-card-img {
+      height: 140px; background: #fff; border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; margin-bottom: 12px;
+    }
+    .mini-card-img img { width: 100%; height: 100%; object-fit: contain; padding: 10px; }
+    .mini-card h4 { font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .mini-card p { font-size: 12px; color: var(--muted); line-height: 1.5; }
+    .mini-carousel-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+    .mini-carousel-dots span {
+      width: 8px; height: 8px; border-radius: 50%; background: #c9cfe6; cursor: pointer;
+    }
+    .mini-carousel-dots span.active { background: var(--navy); }
  
     /* ── HOME GRID (cards grandes) ── */
     .home-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
@@ -237,6 +284,166 @@
     .mat-key { color: var(--muted); }
     .mat-val { color: var(--blue-link); text-align: right; max-width: 60%; }
  
+
+/* ── CARROSSEL DESCUBRA MAIS ── */
+.descubra-section {
+  background: #f4f5f7;
+  padding: 40px;
+  position: relative;
+}
+
+.descubra-header {
+   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 28px;
+}
+
+.descubra-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.descubra-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+}
+
+.descubra-arrows {
+  display: none; /* esconde o bloco original do header */
+}
+
+.descubra-arrow-lateral {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: #fff;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background .2s;
+  z-index: 5;
+}
+
+.descubra-arrow-lateral:hover { background: #0e1235; }
+.descubra-arrow-lateral.left  { left: 12px; }
+.descubra-arrow-lateral.right { right: 12px; }
+
+.descubra-arrows button:hover { background: #0e1235; }
+
+.descubra-track-wrap {
+  overflow: hidden;
+  margin: 0 56px;
+}
+
+.descubra-track {
+  display: flex;
+  gap: 20px;
+  transition: transform .4s ease;
+}
+
+/* card do carrossel */
+.descubra-card {
+  flex: 0 0 280px;
+  width: 280px;
+  background: #f8f9fc;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.descubra-card:hover {
+  box-shadow: 0 8px 24px rgba(26,31,94,.12);
+  transform: translateY(-3px);
+}
+
+.descubra-card-img {
+  height: 260px;
+  background: #0e1235;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 16px;
+}
+
+.descubra-card-img img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.descubra-card-body {
+  padding: 16px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.descubra-card-body h4 {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--blue-link);
+  line-height: 1.4;
+}
+
+.descubra-card-body p {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* dots */
+.descubra-dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.descubra-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+  transition: background .2s;
+}
+
+.descubra-dots span.active {
+  background: var(--navy);
+}
+
+/* responsivo */
+@media (max-width: 768px) {
+  .descubra-section { padding: 24px 16px; }
+  .descubra-card { flex: 0 0 calc(100% - 0px); }
+}
+
+@media (max-width: 1024px) {
+  .descubra-card { flex: 0 0 calc((100% - 20px) / 2); }
+}
+
+
+
+
+
     /* ── SOBRE NÓS ── */
     #page-sobre main { max-width: 900px; margin: 0 auto; }
  

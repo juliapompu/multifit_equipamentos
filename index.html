@@ -47,7 +47,11 @@
       <h2>Mais Vendidos:</h2>
     </div>
     <div class="banner-card" id="banner-card">
-      <div class="banner-img"><div class="placeholder-img">🏋️</div></div>
+      <div class="banner-img" onclick="showPage('catalog')" style="cursor:pointer;">
+        <div class="placeholder-img">
+          <img id="banner-image" src="src/assets/suporte_ho_barras_MF1115.png" alt="Produto em destaque">
+        </div>
+      </div>
       <div class="banner-info">
         <h3 id="banner-title">SUPORTE HORIZONTAL DE BARRAS MF1115</h3>
         <ul id="banner-list">
@@ -63,6 +67,27 @@
     </div>
   </div>
  
+<!-- ═══ CARROSSEL "DESCUBRA MAIS" ═══ -->
+
+<section class="descubra-section">
+  <div class="descubra-header">
+    <div>
+      <p class="descubra-label">VEJA MAIS</p>
+      <h2 class="descubra-title">Descubra mais equipamentos</h2>
+    </div>
+  </div>
+
+  <button class="descubra-arrow-lateral left"  onclick="descubraAnterior()">&#8249;</button>
+  <button class="descubra-arrow-lateral right" onclick="descubraProximo()">&#8250;</button>
+
+  <div class="descubra-track-wrap">
+    <div class="descubra-track" id="descubra-track"></div>
+  </div>
+
+  <div class="descubra-dots" id="descubra-dots"></div>
+</section>
+
+<br><br><br><br><br>
   <main>
     <p class="section-title">Nossos Equipamentos</p>
     <div class="home-grid" id="home-grid"></div>
@@ -116,7 +141,9 @@
       </div>
     </div>
     <div class="sobre-cta">
-      <button class="btn-primary" onclick="showPage('catalog')">SOLICITAR ORÇAMENTO</button>
+      <a href="mailto:juliapompeusouza200@gmail.com?subject=Solicitação de orçamento" class="btn-primary" style="text-decoration:none; display:inline-block;">
+      SOLICITAR ORÇAMENTO
+      </a>
     </div>
   </main>
 </div>
@@ -125,7 +152,7 @@
 <div id="page-detail" class="page">
   <main>
     <div class="breadcrumb">
-      <a href="#" onclick="showPage('catalog'); return false;">← Catálogo</a>
+      <a href="src/pages/Catalogo.html" onclick="showPage('catalog'); return false;">← Catálogo</a>
       <span id="detail-breadcrumb">Produto</span>
     </div>
     <div class="detail-layout">
@@ -143,10 +170,7 @@
           <h3>Características</h3>
           <ul id="detail-chars"></ul>
         </div>
-        <div class="mat-section">
-          <h3>Materiais</h3>
-          <div id="detail-mats"></div>
-        </div>
+       
       </div>
     </div>
   </main>
@@ -162,24 +186,40 @@
     <div class="footer-col">
       <h5>Navegação</h5>
       <ul>
-        <li><a href="#" onclick="showPage('home'); return false;">Home</a></li>
-        <li><a href="#" onclick="showPage('catalog'); return false;">Catálogo</a></li>
-        <li><a href="#" onclick="showPage('sobre'); return false;">Sobre Nós</a></li>
+        <li><a href="index.html" onclick="showPage('home'); return false;">Home</a></li>
+        <li><a href="src/pages/Catalogo.html" onclick="showPage('catalog'); return false;">Catálogo</a></li>
+        <li><a href="src/pages/Sobre.html" onclick="showPage('sobre'); return false;">Sobre Nós</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h5>Contato</h5>
-      <div class="contact-row"><span>📞</span><span>(11) 4000-0000</span></div>
-      <div class="contact-row"><span>✉️</span><span>contato@multifit.com.br</span></div>
-      <div class="contact-row"><span>📍</span><span>São Paulo, SP — Brasil</span></div>
+      <div class="contact-row">
+        <span>📞</span>
+        <span>
+          (11) 
+        </span>
+      </div>
+      <div class="contact-row">
+        <span>✉️</span>
+        <span>
+          contato@multifit.com.br
+        </span>
+      </div>
+      <div class="contact-row">
+        <span>📍</span>
+        <span>Rua Carlos Belmiro Correia, 689 Pq Peruche
+        São Paulo - SP
+        Cep 02538-010
+        CNPJ 05.111.205/0001-68</span>
+      </div>
       <div class="footer-social">
-        <a href="mailto:juliapompeusouza200@gmail.com, gostaria de saber mais.">in</a>
-        <a href="#">f</a>
-        <a href="#">ig</a>
+        <a href="https://www.instagram.com/multifit_equipamentos?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">in</a>
+
+        <a href="mailto:juliapompeusouza200@gmail.com">gmail</a>
       </div>
     </div>
   </div>
-  <div class="footer-bottom">© 2024 Multifit Equipamentos. Todos os direitos reservados.</div>
+  <div class="footer-bottom">© 2026 Multifit Equipamentos. Todos os direitos reservados.</div>
 </footer>
  
 <script src="src/js/script.js"></script>
