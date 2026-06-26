@@ -153,7 +153,7 @@
     { title: 'Barra superior com 1 tipos de pegada MF1184', image: 'src/assets/barra_superior4pegadas_MF1184.png', items: ['Agachamento livre com regulagem de altura da barra','Projetado para utilização com barras de 1,80 mt','Paralelas com várias regulagens de altura','Possui 6 pinos para suporte de anilhas', 'Perfeito para condomínios e/ou salas de ginástica'] },
     { title: 'SUPORTE HORIZONTAL DE BARRAS MF1115', image: 'src/assets/suporte_ho_barras_MF1115.png', items: ['Suporte horizontal para barras','Estrutura em aço reforçado','Pintura eletrostática à pó','Design moderno e robusto'] },
   ];
-  let bannerIdx = 2;
+  let bannerIdx = 0;
  
   function renderBannerDots() {
     const dots = document.getElementById('banner-dots');
@@ -178,7 +178,7 @@
   function bannerNext() { setBanner((bannerIdx+1) % bannerSlides.length); }
   function bannerPrev() { setBanner((bannerIdx-1+bannerSlides.length) % bannerSlides.length); }
   if (document.getElementById('banner-title') || document.getElementById('banner-list') || document.getElementById('banner-dots')) {
-    setInterval(bannerNext, 4000);
+    setInterval(bannerNext, 7000);
   }
  
   let miniCarouselIdx = 0;
@@ -394,7 +394,7 @@ function descubraIrPara(i) {
   // ── INIT ──
   if (document.getElementById('banner-dots') || document.getElementById('banner-title') || document.getElementById('banner-list')) {
     renderBannerDots();
-    setBanner(bannerIdx);
+    setBanner(0);
   }
 
   renderMiniCarousel();

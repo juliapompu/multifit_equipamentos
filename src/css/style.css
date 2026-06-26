@@ -430,15 +430,7 @@
   background: var(--navy);
 }
 
-/* responsivo */
-@media (max-width: 768px) {
-  .descubra-section { padding: 24px 16px; }
-  .descubra-card { flex: 0 0 calc(100% - 0px); }
-}
 
-@media (max-width: 1024px) {
-  .descubra-card { flex: 0 0 calc((100% - 20px) / 2); }
-}
 
 
 
@@ -559,6 +551,26 @@
       .sobre-cards { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 24px; }
       footer { padding: 36px 20px 20px; }
+      .detail-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .detail-img-box {
+        position: static; /* remove o sticky no mobile */
+        min-height: 260px;
+        width: 100%;
+      }
+
+      .detail-img-box .emoji {
+        font-size: 80px;
+      }
+
+      .detail-info {
+        width: 100%;
+      }
     }
  
     @media (max-width: 480px) {
@@ -568,3 +580,50 @@
       .detail-actions { flex-direction: column; }
       .btn-primary, .btn-outline { width: 100%; text-align: center; }
     }
+
+    @media (max-width: 1024px) {
+  .descubra-card {
+    flex: 0 0 260px;
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .descubra-section {
+    padding: 24px 16px;
+  }
+  .descubra-track-wrap {
+    margin: 0 40px;
+  }
+  .descubra-card {
+    flex: 0 0 220px;
+    width: 220px;
+  }
+  .descubra-card-img {
+    height: 160px;
+  }
+  .descubra-card-body h4 {
+    font-size: 14px;
+  }
+  .descubra-card-body p {
+    font-size: 13px;
+  }
+  .descubra-arrow-lateral {
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .descubra-card {
+    flex: 0 0 180px;
+    width: 180px;
+  }
+  .descubra-card-img {
+    height: 130px;
+  }
+  .descubra-track-wrap {
+    margin: 0 36px;
+  }
+}
