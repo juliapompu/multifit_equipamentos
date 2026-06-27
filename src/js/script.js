@@ -250,7 +250,6 @@
           <p>${p.shortDesc}</p>
         </div>
         <div class="home-card-footer">
-          <span>Por:</span>
           <button class="btn-ver" onclick="event.stopPropagation();showDetail(${p.id})">VER MAIS</button>
         </div>
       </div>`).join('');
@@ -270,7 +269,6 @@
           <p>${p.shortDesc}</p>
         </div>
         <div class="prod-card-footer">
-          <span>Por:</span>
           <button class="btn-ver" onclick="event.stopPropagation();showDetail(${p.id})">VER MAIS</button>
         </div>
       </div>`).join('');
