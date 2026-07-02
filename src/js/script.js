@@ -1,7 +1,9 @@
   // ── PRODUTOS ──
+  // Produtos originais (exibidos na home)
   const products = [
      {
       id: 1,
+      mf: 1112,
       name: 'Anilheiro de 04 pinos com 02 suporte para barra MF1112',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/anilheiro_MF1112.png',
@@ -16,6 +18,7 @@
     },
     {
       id: 2,
+      mf: 1115,
       name: 'Suporte Horizontal para barras MF1115',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/suporte_ho_barras_MF1115.png',
@@ -34,6 +37,7 @@
     },
     {
       id: 3,
+      mf: 1142,
       name: 'Pulley sentado para ser utilizado com anilhas MF1142',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/pulley_sentado_anilhas_MF1142.png',
@@ -47,6 +51,7 @@
     },
     {
       id: 4,
+      mf: 1161,
       name: 'Banco de supino reto MF1161',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/supinoreto_MF1161.png',
@@ -60,6 +65,7 @@
     },
     {
       id: 5,
+      mf: 1114,
       name: 'Suporte de Dumbbells MF1114',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/suporte_dumbbells_MF1114.png',
@@ -73,6 +79,7 @@
     },
     {
       id: 6,
+      mf: 1119,
       name: 'Suporte Vertical para Halter MF1119',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/suporte_ve_halter_MF1119.png',
@@ -84,6 +91,7 @@
     },
     {
       id: 7,
+      mf: 1116,
       name: 'Suporte 3 em 1 MF1116',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/suporte_3em1_MF1116.png',
@@ -101,6 +109,7 @@
     },
     {
       id: 8,
+      mf: 1172,
       name: 'Espaldar de Alumínio MF1172',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/espaldar_MF1172.png',
@@ -114,6 +123,7 @@
     },
     {
       id: 9,
+      mf: 1122,
       name: 'Banco reto fixo MF1122',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/banco_retofixo_MF1122.png',
@@ -126,6 +136,7 @@
     },
     {
       id: 10,
+      mf: 1132,
       name: 'Banco livre Regulável MF1132',
       category: 'MUSCULAÇÃO',
       img: 'src/assets/banco_livre_rm_MF1132.png',
@@ -136,6 +147,123 @@
       chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
       mats: [
 ]
+    },
+  ];
+
+  // Todos os produtos (para o catálogo)
+  const allProducts = [
+    ...products,
+    {
+      id: 11,
+      mf: 1101,
+      name: 'Banco de Supino Reto e Inclinado MF1101',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/supino_MF1101.png',
+      shortDesc: 'Banco de supino reto, inclinado e declinado',
+      fullDesc: 'Regulagem múltipla de inclinação. Pode ser utilizado com barra de 1,50m. Dobrável e ideal para pequenos ambientes.',
+      specs: [],
+      chars: ['Regulagem múltipla de inclinação', 'Pode ser utilizado com barra de 1,50m', 'Dobrável', 'Ideal para pequenos ambientes'],
+      mats: []
+    },
+    {
+      id: 12,
+      mf: 1102,
+      name: 'Banco de Supino MF1102',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/supino_MF1102.png',
+      shortDesc: 'Banco de supino regulável',
+      fullDesc: 'Banco de supino com múltiplas posições de inclinação',
+      specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 13,
+      mf: 1103,
+      name: 'Banco de Supino MF1103',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/supino_MF1103.png',
+      shortDesc: 'Banco de supino profissional',
+      fullDesc: 'Banco de supino com estrutura reforçada',
+      specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 14,
+      mf: 1104,
+      name: 'Banco de Supino MF1104',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/supino_MF1104.png',
+      shortDesc: 'Banco de supino com apoio',
+      fullDesc: 'Banco de supino com apoios laterais para maior estabilidade',
+      specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 15,
+      mf: 1113,
+      name: 'Anilheiro MF1113',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/anilheiro_MF1113.png',
+      shortDesc: 'Anilheiro com suporte para barra',
+      fullDesc: 'Anilheiro de alta capacidade com suporte horizontal para barras',
+      specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 16,
+      mf: 1118,
+      name: 'Suporte Vertical para Halter MF1118',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/suporte_ve_halter_MF1118.png',
+      shortDesc: 'Suporte Vertical para Halter',
+      fullDesc: 'Suporte vertical para halteres com capacidade de até 110 kg',
+      specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 17,
+      mf: 1152,
+      name: 'Equipamento Bíceps MF1152',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/equipamento_biceps_MF1152.png',
+      shortDesc: 'Equipamento especializado para bíceps',
+      fullDesc: 'Máquina isoladora para exercícios de bíceps com movimento guiado',
+      specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 18,
+      mf: 1162,
+      name: 'Banco de Supino Reto MF1162',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/supinoreto_MF1162.png',
+      shortDesc: 'Banco de supino reto profissional',
+      fullDesc: 'Banco de supino reto com estrutura em aço de alta qualidade',
+      specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço 5050 reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 19,
+      mf: 1184,
+      name: 'Barra Superior com 4 Tipos de Pegada MF1184',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/barra_superior4pegadas_MF1184.png',
+      shortDesc: 'Barra superior com múltiplas pegadas',
+      fullDesc: 'Agachamento livre com regulagem de altura da barra. Projetado para utilização com barras de 1,80 m. Paralelas com várias regulagens de altura.',
+      specs: [
+        { label: 'Altura:', val: 'Regulável' },
+        { label: 'Pegadas:', val: '4 tipos diferentes' },
+        { label: 'Capacidade:', val: 'Até 150 kg' },
+      ],
+      chars: ['Agachamento livre com regulagem de altura da barra', 'Projetado para utilização com barras de 1,80 m', 'Paralelas com várias regulagens de altura', 'Possui 6 pinos para suporte de anilhas'],
+      mats: []
     },
   ];
  
@@ -239,7 +367,8 @@
   function renderHomeGrid(list) {
     const container = document.getElementById('home-grid');
     if (!container) return;
-    container.innerHTML = list.map(p => `
+    const sorted = list.sort((a, b) => a.mf - b.mf);
+    container.innerHTML = sorted.map(p => `
       <div class="home-card" onclick="showDetail(${p.id})">
         <div class="home-card-img">
           <img class="card-image" src="${getAssetPath(p.img)}" alt="${p.name}">
@@ -259,7 +388,8 @@
   function renderCatalog(list) {
     const container = document.getElementById('catalog-grid');
     if (!container) return;
-    container.innerHTML = list.map(p => `
+    const sorted = list.sort((a, b) => a.mf - b.mf);
+    container.innerHTML = sorted.map(p => `
       <div class="prod-card" onclick="showDetail(${p.id})">
         <div class="prod-card-img">
           <img class="card-image" src="${getAssetPath(p.img)}" alt="${p.name}">
@@ -279,15 +409,23 @@
     const input = document.getElementById('search-input');
     if (!input) return;
     const q = input.value.toLowerCase();
-    const filtered = q ? products.filter(p =>
-      p.name.toLowerCase().includes(q) || p.shortDesc.toLowerCase().includes(q)) : products;
-    if (document.getElementById('home-grid')) renderHomeGrid(filtered);
-    if (document.getElementById('catalog-grid')) renderCatalog(filtered);
+    
+    if (document.getElementById('home-grid')) {
+      const filtered = q ? products.filter(p =>
+        p.name.toLowerCase().includes(q) || p.shortDesc.toLowerCase().includes(q)) : products;
+      renderHomeGrid(filtered);
+    }
+    
+    if (document.getElementById('catalog-grid')) {
+      const filtered = q ? allProducts.filter(p =>
+        p.name.toLowerCase().includes(q) || p.shortDesc.toLowerCase().includes(q)) : allProducts;
+      renderCatalog(filtered);
+    }
   }
  
   // ── DETAIL ──
   function showDetail(id) {
-    const p = products.find(x => x.id === id);
+    const p = allProducts.find(x => x.id === id);
     if (!p) return;
 
     const breadcrumb = document.getElementById('detail-breadcrumb');
@@ -338,7 +476,8 @@ function renderDescubra() {
   const track = document.getElementById('descubra-track');
   if (!track) return;
 
-  track.innerHTML = products.map(p => `
+  const sorted = allProducts.sort((a, b) => a.mf - b.mf);
+  track.innerHTML = sorted.map(p => `
     <div class="descubra-card" onclick="showDetail(${p.id})">
       <div class="descubra-card-img">
         <img src="${p.img}" alt="${p.name}" onerror="this.parentElement.innerHTML='<div style=font-size:48px;opacity:.2>🏋️</div>'" />
@@ -365,7 +504,7 @@ function atualizarDescubra() {
 }
 
 function descubraProximo() {
-  const max = products.length - DESCUBRA_VISIBLE;
+  const max = allProducts.length - DESCUBRA_VISIBLE;
   if (descubraIdx < max) { descubraIdx++; atualizarDescubra(); }
 }
 
@@ -376,7 +515,7 @@ function descubraAnterior() {
 function renderDescubraDots() {
   const dots = document.getElementById('descubra-dots');
   if (!dots) return;
-  const total = Math.ceil(products.length / DESCUBRA_VISIBLE);
+  const total = Math.ceil(allProducts.length / DESCUBRA_VISIBLE);
   const atual = Math.floor(descubraIdx / DESCUBRA_VISIBLE);
   dots.innerHTML = Array.from({length: total}, (_, i) =>
     `<span class="${i === atual ? 'active' : ''}" onclick="descubraIrPara(${i})"></span>`
@@ -406,6 +545,6 @@ function descubraIrPara(i) {
   if (document.getElementById('home-grid')) renderHomeGrid(products);
 
   // roda renderCatalog só se o elemento existir (página catálogo)
-  if (document.getElementById('catalog-grid')) renderCatalog(products);
+  if (document.getElementById('catalog-grid')) renderCatalog(allProducts);
 
   if (document.getElementById('descubra-track')) renderDescubra();
