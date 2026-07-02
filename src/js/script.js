@@ -265,6 +265,38 @@
       chars: ['Agachamento livre com regulagem de altura da barra', 'Projetado para utilização com barras de 1,80 m', 'Paralelas com várias regulagens de altura', 'Possui 6 pinos para suporte de anilhas'],
       mats: []
     },
+    {
+      id: 20,
+      mf: 1192,
+      name: 'Barra Fixa de Parede MF1192',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/barra_fixa_parede_MF1192.png',
+      shortDesc: 'Barra fixa de parede excelente para trabalhar membros superiores',
+      fullDesc: 'Barra Fixa de Parede - Excelente para Trabalhar Membros Superiores - Possui 04 Tipos de Pegada',
+      specs: [
+        { label: 'Tipos de Pegada:', val: '04' },
+        { label: 'Material:', val: 'Aço reforçado' },
+        { label: 'Acabamento:', val: 'Pintura eletrostática à pó' },
+      ],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG', 'Possui 04 tipos de pegada'],
+      mats: []
+    },
+    {
+      id: 21,
+      mf: 2201,
+      name: 'Prancha Abdominal Regulável MF2201',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/prancha_abdominal_MF2201.png',
+      shortDesc: 'Prancha abdominal regulável com inclinação em diversos níveis',
+      fullDesc: 'Prancha Abdominal Regulável - Possibilita Regular a Inclinação em Diversos Níveis para Isolar e Otimizar o Exercício Abdominal - Rollete para Apoio das Pernas também é Regulável para Aumentar o Conforto',
+      specs: [
+        { label: 'Regulagem:', val: 'Múltiplos níveis de inclinação' },
+        { label: 'Apoio de Pernas:', val: 'Rollete regulável' },
+        { label: 'Material:', val: 'Aço reforçado' },
+      ],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG', 'Regulagem de inclinação em diversos níveis', 'Rollete para apoio das pernas regulável'],
+      mats: []
+    },
   ];
  
   function getAssetPath(path) {
