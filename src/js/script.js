@@ -280,7 +280,7 @@
       mf: 2201,
       name: 'Prancha Abdominal Regulável MF2201',
       category: 'MUSCULAÇÃO',
-      img: 'src/assets/prancha_abdominal_MF2201.png',
+      img: 'src/assets/Prancha_abdominal_MF2201.png',
       shortDesc: 'Prancha abdominal regulável com inclinação em diversos níveis',
       fullDesc: 'Prancha Abdominal Regulável - Possibilita Regular a Inclinação em Diversos Níveis para Isolar e Otimizar o Exercício Abdominal - Rollete para Apoio das Pernas também é Regulável para Aumentar o Conforto, Regulagem: Mltiplos níveis de inclinação, Apoio de Pernas: Rollete regulável, Material: Aço reforçado ',
       specs: [
@@ -293,7 +293,7 @@
       mf: 1117,
       name: 'Suporte para Kit Pump MF1117',
       category: 'MUSCULAÇÃO',
-      img: 'src/assets/suporte_kit_pump_MF1117.jpeg',
+      img: 'src/assets/Suporte_Kit_Pump_MF1117.jpeg',
       shortDesc: 'Suporte para Kit Pump com regulagem de altura',
       fullDesc: 'Suporte para Kit Pump - Para barras vazadas e anilhas',
      specs: [],
