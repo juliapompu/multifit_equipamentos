@@ -256,11 +256,8 @@
       category: 'MUSCULAÇÃO',
       img: 'src/assets/barra_superior4pegadas_MF1184.png',
       shortDesc: 'Barra superior com múltiplas pegadas',
-      fullDesc: 'Agachamento livre com regulagem de altura da barra. Projetado para utilização com barras de 1,80 m. Paralelas com várias regulagens de altura.',
+      fullDesc: 'Agachamento livre com regulagem de altura da barra. Projetado para utilização com barras de 1,80 m. Paralelas com várias regulagens de altura. Altura: Regulável, Pegadas: 4 tipos diferentes, Capacidade: Até 150 kg',
       specs: [
-        { label: 'Altura:', val: 'Regulável' },
-        { label: 'Pegadas:', val: '4 tipos diferentes' },
-        { label: 'Capacidade:', val: 'Até 150 kg' },
       ],
       chars: ['Agachamento livre com regulagem de altura da barra', 'Projetado para utilização com barras de 1,80 m', 'Paralelas com várias regulagens de altura', 'Possui 6 pinos para suporte de anilhas'],
       mats: []
@@ -272,11 +269,8 @@
       category: 'MUSCULAÇÃO',
       img: 'src/assets/barra_fixa_parede_MF1192.png',
       shortDesc: 'Barra fixa de parede excelente para trabalhar membros superiores',
-      fullDesc: 'Barra Fixa de Parede - Excelente para Trabalhar Membros Superiores - Possui 04 Tipos de Pegada',
+      fullDesc: 'Barra Fixa de Parede - Excelente para Trabalhar Membros Superiores - Possui 04 Tipos de Pegada, Tipos de Pegada: 04,Material: Aço reforçado, Acabamento: Pintura eletrostática à pó ',
       specs: [
-        { label: 'Tipos de Pegada:', val: '04' },
-        { label: 'Material:', val: 'Aço reforçado' },
-        { label: 'Acabamento:', val: 'Pintura eletrostática à pó' },
       ],
       chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG', 'Possui 04 tipos de pegada'],
       mats: []
@@ -288,13 +282,60 @@
       category: 'MUSCULAÇÃO',
       img: 'src/assets/prancha_abdominal_MF2201.png',
       shortDesc: 'Prancha abdominal regulável com inclinação em diversos níveis',
-      fullDesc: 'Prancha Abdominal Regulável - Possibilita Regular a Inclinação em Diversos Níveis para Isolar e Otimizar o Exercício Abdominal - Rollete para Apoio das Pernas também é Regulável para Aumentar o Conforto',
+      fullDesc: 'Prancha Abdominal Regulável - Possibilita Regular a Inclinação em Diversos Níveis para Isolar e Otimizar o Exercício Abdominal - Rollete para Apoio das Pernas também é Regulável para Aumentar o Conforto, Regulagem: Mltiplos níveis de inclinação, Apoio de Pernas: Rollete regulável, Material: Aço reforçado ',
       specs: [
-        { label: 'Regulagem:', val: 'Múltiplos níveis de inclinação' },
-        { label: 'Apoio de Pernas:', val: 'Rollete regulável' },
-        { label: 'Material:', val: 'Aço reforçado' },
       ],
       chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG', 'Regulagem de inclinação em diversos níveis', 'Rollete para apoio das pernas regulável'],
+      mats: []
+    },
+     {
+      id: 22,
+      mf: 1117,
+      name: 'Suporte para Kit Pump MF1117',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/suporte_kit_pump_MF1117.jpeg',
+      shortDesc: 'Suporte para Kit Pump com regulagem de altura',
+      fullDesc: 'Suporte para Kit Pump - Para barras vazadas e anilhas',
+     specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 23,
+      mf: 1120,
+      name: 'Suporte vertical para Halter MF1120',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/Suporte_ve_Halter_1120.jpeg',
+      shortDesc: 'Suporte vertical para Halter',
+      fullDesc: 'Suporte vertical para Halter - Para peso de 1,0 kg a 10,0 kg - Capacidade de carga 110 kg',
+     specs: [],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+     {
+      id: 24,
+      mf: 1173,
+      name: 'Espaldar Funcional MF1173',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/Espaldar_Funcional_MF1173.jpeg',
+      shortDesc: 'Espaldar funcional',
+      fullDesc: 'Espaldar funcional - Fabricado em Aço Carbono, dimensões: Padrão, altura: 2,200 mm, largura: 1,200 mm, profundidade: 650 mm', 
+     specs: [
+      ],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
+      mats: []
+    },
+    {
+      id: 25,
+      mf: 1183,
+      name: 'Cavalete para Agachamento MF1183',
+      category: 'MUSCULAÇÃO',
+      img: 'src/assets/Cavalete_Agachamento_MF1183.jpeg',
+      shortDesc: 'Cavalete para Agachamento',
+      fullDesc: 'Cavalete para Agachamento - Diversas regulagens de altura da Barra. Ideal para treino de membros Inferiores. Pode ser utilizado em conjunto com MF1122 ou MF1132. Para ser utilizado com barra de 1.80 m', 
+     specs: [
+      ],
+      chars: ['Ideal para pequenos ambientes', 'Estrutura em aço reforçado', 'Pintura eletrostática à pó', 'Processo de solda MIG'],
       mats: []
     },
   ];
