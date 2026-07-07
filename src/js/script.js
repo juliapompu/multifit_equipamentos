@@ -267,7 +267,7 @@
       mf: 1192,
       name: 'Barra Fixa de Parede MF1192',
       category: 'MUSCULAÇÃO',
-      img: 'src/assets/barra_fixa_parede_MF1192.png',
+      img: 'src/assets/Barra_fixa_parede_MF1192.png',
       shortDesc: 'Barra fixa de parede excelente para trabalhar membros superiores',
       fullDesc: 'Barra Fixa de Parede - Excelente para Trabalhar Membros Superiores - Possui 04 Tipos de Pegada, Tipos de Pegada: 04,Material: Aço reforçado, Acabamento: Pintura eletrostática à pó ',
       specs: [
