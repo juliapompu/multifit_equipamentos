@@ -330,7 +330,7 @@
       mf: 1183,
       name: 'Cavalete para Agachamento MF1183',
       category: 'MUSCULAÇÃO',
-      img: 'src/assets/Cavalete_Agachamento_MF1183.jpeg',
+      img: 'src/assets/Cavalete_agachamento_MF1183.jpeg',
       shortDesc: 'Cavalete para Agachamento',
       fullDesc: 'Cavalete para Agachamento - Diversas regulagens de altura da Barra. Ideal para treino de membros Inferiores. Pode ser utilizado em conjunto com MF1122 ou MF1132. Para ser utilizado com barra de 1.80 m', 
      specs: [
